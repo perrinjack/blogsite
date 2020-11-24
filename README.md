@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I used this project to practice my backend development skills most notably with an emphasis on authentication of users utilising the devise gem. Front end wise I have kept it very basic using bootstrap (normally i'd prefer to use React.js for front end development with Rails API running the backend).
