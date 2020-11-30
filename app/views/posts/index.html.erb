@@ -22,7 +22,7 @@
                                 
                                 <div class="ml-2">
                                     <div class="h5 m-0">
-                                    <p><%= link_to "#{post.user.email}", user_path(current_user.id) %>
+                                    <p><%= link_to "#{post.user.email}", user_path(post.user.id) %>
                                     
                                     <p></div>
                                     <div class="h7 text-muted">users name</div>
@@ -38,17 +38,25 @@
                     <div class="card-body">
                         <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><%= post.created_at%></div>
                         <a class="card-link" href="#">
-                            <h5 class="card-title">Title</h5>
+                            <h5 class="card-title"></h5>
                         </a>
 
                         <p class="card-text">
                             <%= post.description%>
                         </p>
-                        
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><%= post.votes_for.size%> person likes this</div>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+
+                    <% if (current_user.voted_for? post ) %> 
+                          <i class="fa fa-gittip"><%= link_to "Unlike", unlike_post_path(id: post.id), method: post,  class: "card-link" %> </i>
+                          <% else %>
+                    <i class="fa fa-gittip"><%= link_to "Like", like_post_path(id: post.id), method: post, class: "card-link" %> </i> 
+                      <% end %>   
+                    
+                    
+                        
+                
                        
                     </div>
                     
