@@ -1,0 +1,8 @@
+ <%= form_for @post do |form| %> 
+  
+ 
+
+<%= form.text_area(:description, user_id: "Message", placeholder: "What are you thinking #{current_user.email}?")  %> 
+
+  <button class="btn btn-white btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> New Post</button>
+<% end %>
