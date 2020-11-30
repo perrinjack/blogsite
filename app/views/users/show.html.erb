@@ -1,17 +1,5 @@
 <% content_for :top_content do %>
-  
-    <% if !user_signed_in? %>
 
-    <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome to my blogsite!</h1>
-      <p>Register to get started.</p>
-      <p>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
-      </p>
-       </div>
-  </div>
-     <% else %>
      <div class="container">
      
       <% @posts.each do |post|%>
@@ -61,6 +49,3 @@
 </div>  
 <% end %>
    
-<% end %>
-
-
