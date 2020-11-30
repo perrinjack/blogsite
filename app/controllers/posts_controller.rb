@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
     def index
-        @posts = Post.all
+        @posts = Post.all.order(created_at: :desc)
     end
 
     def new
@@ -14,6 +14,8 @@ class PostsController < ApplicationController
         redirect_to posts_path
 
     end
+
+    
 
     def post_params
         params.require(:post).permit(:description, :user_id)
