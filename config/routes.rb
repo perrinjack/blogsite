@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       post :like
+      post :destroy
       post :unlike
     end
   end
