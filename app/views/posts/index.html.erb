@@ -48,13 +48,19 @@
                     </div>
                     <div class="card-footer">
 
+                    <% if (current_user.id == post.user.id) %>
+
+                    <i class="fa fa-gittip"><%= link_to 'Delete', post_path(id: post.id), :method => :delete, :confirm => "Are you sure?", class: "card-link"%></i> 
+
+                     <% else %>
                     <% if (current_user.voted_for? post ) %> 
                           <i class="fa fa-gittip"><%= link_to "Unlike", unlike_post_path(id: post.id), method: post,  class: "card-link" %> </i>
-                          <i class="fa fa-gittip"><%= link_to 'Destroy', post_path(id: post.id), :method => :delete, :confirm => "Are you sure?", class: "card-link"%></i> 
+                         
                           <% else %>
                     <i class="fa fa-gittip"><%= link_to "Like", like_post_path(id: post.id), method: post, class: "card-link" %> </i> 
-                     <i class="fa fa-gittip"><%= link_to 'Destroy', post_path(id: post.id), :method => :delete, :confirm => "Are you sure?", class: "card-link"%></i> 
-                      <% end %>   
+                     
+                      <% end %>  
+                      <% end %> 
                      
                     
                     
